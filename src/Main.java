@@ -1,7 +1,4 @@
-import Logic.Piece;
-import Logic.Board;
-import Logic.Board;
-import Logic.Rook;
+import Logic.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,7 +7,7 @@ public class Main {
 
         Rook torre = new Rook(0,0, true);
 
-        board.setPiece(0,0,torre);
+        //board.setPiece(0,0,torre);
 
         System.out.println("Prueba de torre en 0,0");
 
@@ -22,5 +19,11 @@ public class Main {
         System.out.println("¿Puede ir a (5,5)? Esperado: false -> Resultado: " + test3);
         boolean test4 = torre.isValidMovement(0, 0, board);
         System.out.println("¿Puede ir a (0,0)? Esperado: false -> Resultado: " + test4);
+
+       board.setAllPieces();
+
+       //board.ImprimirConsola();
+       board.mostrarMovimientos(board.getPiece(1,0));
+
     }
 }

@@ -12,6 +12,7 @@ public abstract class Piece {
     protected int y;
     protected boolean isWhite;
     protected boolean isFirstMove;
+    protected String simbolo;
     /**
      * Constructor principal de la pieza
      * @param x, coordenada x inicial (0-7)
@@ -26,6 +27,7 @@ public abstract class Piece {
         this.isFirstMove = isFirstMove; //true por defecto
     }
 
+
     /**
      * Verificaremos si un movimiento es valido o no segun el tipo de pieza y logica del juego
      *
@@ -36,6 +38,10 @@ public abstract class Piece {
      * */
 
     public abstract boolean isValidMovement(int newX, int newY, Board board);
+
+    public String toSymbol(){
+        return this.simbolo;
+    }
 
     public int getX() {
         return x;
@@ -67,5 +73,16 @@ public abstract class Piece {
 
     public void setFirstMove(boolean firstMove) {
         isFirstMove = firstMove;
+    }
+
+    public void setSymbol(String simbolo){ this.simbolo = simbolo;}
+
+    public String getSimbolo(){return simbolo;}
+
+
+
+    @Override
+    public String toString(){
+        return this.getClass().getSimpleName() + " " + "\n"+ this.x +  " " +  this.y;
     }
 }

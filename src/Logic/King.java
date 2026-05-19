@@ -40,6 +40,8 @@ public class King extends Piece {
      * @return true si el movimiento es geométricamente posible y legal (sin contar jaques).
      */
 
+
+
     @Override
     public boolean isValidMovement(int newX, int newY, Board board) {
 
@@ -51,7 +53,6 @@ public class King extends Piece {
         if(target == null)return true;
 
         return (this.isWhite ^ target.isWhite());
-
 
     }
 }
