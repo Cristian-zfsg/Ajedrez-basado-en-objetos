@@ -42,7 +42,12 @@ public class Pawn extends Piece {
     @Override
     public boolean isValidMovement(int newX, int newY, Board board) {
 
+        int color = -1;
+        if (isWhite) color = 1;
+
         if(newX == x && newY == y )return false;
+
+
 
 
         return false;
